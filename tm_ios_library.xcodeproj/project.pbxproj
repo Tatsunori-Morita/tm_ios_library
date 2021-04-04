@@ -35,6 +35,9 @@
 		0EAE6D7925E21FA5002DD870 /* TestPhotoPickerImageCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE6D7825E21FA5002DD870 /* TestPhotoPickerImageCollectionViewLayout.swift */; };
 		0EAE6D7E25E221A4002DD870 /* TestPhotoPickerImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE6D7D25E221A4002DD870 /* TestPhotoPickerImageCollectionViewCell.swift */; };
 		0EAE6D8325E22BA5002DD870 /* PhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE6D8225E22BA5002DD870 /* PhotoDataSource.swift */; };
+		0EC0FEF32619B3FB0011B8AD /* PlaceholderTextview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC0FEF22619B3FB0011B8AD /* PlaceholderTextview.swift */; };
+		0EC0FEFB2619DC220011B8AD /* SamplePlaceholderTextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC0FEFA2619DC220011B8AD /* SamplePlaceholderTextViewViewController.swift */; };
+		0EC0FF002619DC7C0011B8AD /* SamplePlaceholderTextViewViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EC0FEFF2619DC7C0011B8AD /* SamplePlaceholderTextViewViewController.storyboard */; };
 		0EE554E925EFC24B00644631 /* ImagePickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE554E825EFC24B00644631 /* ImagePickerCollectionViewCell.swift */; };
 		0EE554EE25F10DF000644631 /* ImagePickerPhotoAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE554ED25F10DF000644631 /* ImagePickerPhotoAsset.swift */; };
 		57D6D7558F577FAC6C1DF856 /* Pods_tm_ios_libraryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2D9E22BBC35A661EFB7532 /* Pods_tm_ios_libraryTests.framework */; };
@@ -94,6 +97,9 @@
 		0EAE6D7825E21FA5002DD870 /* TestPhotoPickerImageCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPhotoPickerImageCollectionViewLayout.swift; sourceTree = "<group>"; };
 		0EAE6D7D25E221A4002DD870 /* TestPhotoPickerImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPhotoPickerImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		0EAE6D8225E22BA5002DD870 /* PhotoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDataSource.swift; sourceTree = "<group>"; };
+		0EC0FEF22619B3FB0011B8AD /* PlaceholderTextview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextview.swift; sourceTree = "<group>"; };
+		0EC0FEFA2619DC220011B8AD /* SamplePlaceholderTextViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplePlaceholderTextViewViewController.swift; sourceTree = "<group>"; };
+		0EC0FEFF2619DC7C0011B8AD /* SamplePlaceholderTextViewViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SamplePlaceholderTextViewViewController.storyboard; sourceTree = "<group>"; };
 		0EE554E825EFC24B00644631 /* ImagePickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		0EE554ED25F10DF000644631 /* ImagePickerPhotoAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerPhotoAsset.swift; sourceTree = "<group>"; };
 		12E79107BB12DC27BE36C125 /* Pods_tm_ios_library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tm_ios_library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +166,7 @@
 		0E04FEA425DE8F2C004067C7 /* tm_ios_library */ = {
 			isa = PBXGroup;
 			children = (
+				0EC0FEF02619B3C80011B8AD /* UI */,
 				0E8A0AF825E13A61007A5523 /* ImagePickerTest */,
 				0E04FEDB25DE8FAE004067C7 /* WeatherApp */,
 				0E04FEE725DE8FBB004067C7 /* Const.swift */,
@@ -249,6 +256,24 @@
 				0E422C4025EE6D3E0039D45A /* Old */,
 			);
 			path = ImagePickerTest;
+			sourceTree = "<group>";
+		};
+		0EC0FEF02619B3C80011B8AD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0EC0FEF12619B3DC0011B8AD /* TextView */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		0EC0FEF12619B3DC0011B8AD /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				0EC0FEF22619B3FB0011B8AD /* PlaceholderTextview.swift */,
+				0EC0FEFA2619DC220011B8AD /* SamplePlaceholderTextViewViewController.swift */,
+				0EC0FEFF2619DC7C0011B8AD /* SamplePlaceholderTextViewViewController.storyboard */,
+			);
+			path = TextView;
 			sourceTree = "<group>";
 		};
 		1AE885819A4EA9609A146F59 /* Pods */ = {
@@ -383,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E04FEB225DE8F2D004067C7 /* LaunchScreen.storyboard in Resources */,
+				0EC0FF002619DC7C0011B8AD /* SamplePlaceholderTextViewViewController.storyboard in Resources */,
 				0E04FEAF25DE8F2D004067C7 /* Assets.xcassets in Resources */,
 				0E422C1925ECA62D0039D45A /* TestCropViewController.storyboard in Resources */,
 				0E04FEAD25DE8F2C004067C7 /* Main.storyboard in Resources */,
@@ -529,6 +555,7 @@
 				0E422C0E25EBB4610039D45A /* TestScrollView.swift in Sources */,
 				0EAE6D7925E21FA5002DD870 /* TestPhotoPickerImageCollectionViewLayout.swift in Sources */,
 				0E422C2C25ECDE6D0039D45A /* CropAreaView.swift in Sources */,
+				0EC0FEFB2619DC220011B8AD /* SamplePlaceholderTextViewViewController.swift in Sources */,
 				0E04FEA825DE8F2C004067C7 /* SceneDelegate.swift in Sources */,
 				0E422C3725EE6BB50039D45A /* ImagePickerViewController.swift in Sources */,
 				0EAE6D7E25E221A4002DD870 /* TestPhotoPickerImageCollectionViewCell.swift in Sources */,
@@ -537,6 +564,7 @@
 				0EAE6D8325E22BA5002DD870 /* PhotoDataSource.swift in Sources */,
 				0EE554EE25F10DF000644631 /* ImagePickerPhotoAsset.swift in Sources */,
 				0E04FEE325DE8FAE004067C7 /* Weather.swift in Sources */,
+				0EC0FEF32619B3FB0011B8AD /* PlaceholderTextview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,7 +670,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -697,7 +725,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -739,6 +739,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1FFE071F4DB52BD178063214 /* Pods-tm_ios_library.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -759,6 +760,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E3B0CC39664809CC896AE258 /* Pods-tm_ios_library.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -779,7 +781,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ACA9460C3FA2DE9C75633EA8 /* Pods-tm_ios_libraryTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MSDQFFFB37;
@@ -802,7 +804,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 376B6182998462F91C0FAC16 /* Pods-tm_ios_libraryTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MSDQFFFB37;
@@ -825,7 +827,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8B5FC12A4880B624481E73D7 /* Pods-tm_ios_library-tm_ios_libraryUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MSDQFFFB37;
 				INFOPLIST_FILE = tm_ios_libraryUITests/Info.plist;
@@ -846,7 +848,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 15515A21EF74C2413D44DF69 /* Pods-tm_ios_library-tm_ios_libraryUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MSDQFFFB37;
 				INFOPLIST_FILE = tm_ios_libraryUITests/Info.plist;

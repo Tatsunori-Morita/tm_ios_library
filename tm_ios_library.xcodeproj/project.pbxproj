@@ -19,6 +19,9 @@
 		0E04FEE225DE8FAE004067C7 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E04FEDE25DE8FAE004067C7 /* WeatherService.swift */; };
 		0E04FEE325DE8FAE004067C7 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E04FEDF25DE8FAE004067C7 /* Weather.swift */; };
 		0E04FEE825DE8FBB004067C7 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E04FEE725DE8FBB004067C7 /* Const.swift */; };
+		0E23A47626215EE700CEEA01 /* SampleFlexibleHeightImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23A47526215EE700CEEA01 /* SampleFlexibleHeightImageViewController.swift */; };
+		0E23A48126215F2D00CEEA01 /* FlexibleHeightImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23A48026215F2D00CEEA01 /* FlexibleHeightImageView.swift */; };
+		0E23A486262171BD00CEEA01 /* SampleFlexibleHeightImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E23A485262171BD00CEEA01 /* SampleFlexibleHeightImageViewController.storyboard */; };
 		0E422C0E25EBB4610039D45A /* TestScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E422C0D25EBB4610039D45A /* TestScrollView.swift */; };
 		0E422C1925ECA62D0039D45A /* TestCropViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E422C1825ECA62D0039D45A /* TestCropViewController.storyboard */; };
 		0E422C1E25ECBD200039D45A /* TestCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E422C1D25ECBD200039D45A /* TestCropViewController.swift */; };
@@ -81,6 +84,9 @@
 		0E04FEDE25DE8FAE004067C7 /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		0E04FEDF25DE8FAE004067C7 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		0E04FEE725DE8FBB004067C7 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		0E23A47526215EE700CEEA01 /* SampleFlexibleHeightImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFlexibleHeightImageViewController.swift; sourceTree = "<group>"; };
+		0E23A48026215F2D00CEEA01 /* FlexibleHeightImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleHeightImageView.swift; sourceTree = "<group>"; };
+		0E23A485262171BD00CEEA01 /* SampleFlexibleHeightImageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleFlexibleHeightImageViewController.storyboard; sourceTree = "<group>"; };
 		0E422C0D25EBB4610039D45A /* TestScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScrollView.swift; sourceTree = "<group>"; };
 		0E422C1825ECA62D0039D45A /* TestCropViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestCropViewController.storyboard; sourceTree = "<group>"; };
 		0E422C1D25ECBD200039D45A /* TestCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCropViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +172,7 @@
 		0E04FEA425DE8F2C004067C7 /* tm_ios_library */ = {
 			isa = PBXGroup;
 			children = (
+				0E23A47426215E9D00CEEA01 /* FlexibleHeightImageView */,
 				0EC0FEF02619B3C80011B8AD /* UI */,
 				0E8A0AF825E13A61007A5523 /* ImagePickerTest */,
 				0E04FEDB25DE8FAE004067C7 /* WeatherApp */,
@@ -207,6 +214,16 @@
 				0E04FEDF25DE8FAE004067C7 /* Weather.swift */,
 			);
 			path = WeatherApp;
+			sourceTree = "<group>";
+		};
+		0E23A47426215E9D00CEEA01 /* FlexibleHeightImageView */ = {
+			isa = PBXGroup;
+			children = (
+				0E23A47526215EE700CEEA01 /* SampleFlexibleHeightImageViewController.swift */,
+				0E23A48026215F2D00CEEA01 /* FlexibleHeightImageView.swift */,
+				0E23A485262171BD00CEEA01 /* SampleFlexibleHeightImageViewController.storyboard */,
+			);
+			path = FlexibleHeightImageView;
 			sourceTree = "<group>";
 		};
 		0E422C3B25EE6C430039D45A /* Crop */ = {
@@ -412,6 +429,7 @@
 				0E04FEAF25DE8F2D004067C7 /* Assets.xcassets in Resources */,
 				0E422C1925ECA62D0039D45A /* TestCropViewController.storyboard in Resources */,
 				0E04FEAD25DE8F2C004067C7 /* Main.storyboard in Resources */,
+				0E23A486262171BD00CEEA01 /* SampleFlexibleHeightImageViewController.storyboard in Resources */,
 				0E8A0B1F25E21A20007A5523 /* TestImagesViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,6 +562,7 @@
 				0E422C3125ED010E0039D45A /* DisplayViewController.swift in Sources */,
 				0E04FEE025DE8FAE004067C7 /* WeatherViewModel.swift in Sources */,
 				0E8A0B1A25E219FA007A5523 /* TestImagesViewController.swift in Sources */,
+				0E23A47626215EE700CEEA01 /* SampleFlexibleHeightImageViewController.swift in Sources */,
 				0E04FEA625DE8F2C004067C7 /* AppDelegate.swift in Sources */,
 				0EADC99925E2507A0086F707 /* TestPhotoPickerConfig.swift in Sources */,
 				0E8A0B1525E14613007A5523 /* SecondViewController.swift in Sources */,
@@ -561,6 +580,7 @@
 				0EAE6D7E25E221A4002DD870 /* TestPhotoPickerImageCollectionViewCell.swift in Sources */,
 				0E422C1E25ECBD200039D45A /* TestCropViewController.swift in Sources */,
 				0E8A0AFD25E13A92007A5523 /* TestImagePickerViewController.swift in Sources */,
+				0E23A48126215F2D00CEEA01 /* FlexibleHeightImageView.swift in Sources */,
 				0EAE6D8325E22BA5002DD870 /* PhotoDataSource.swift in Sources */,
 				0EE554EE25F10DF000644631 /* ImagePickerPhotoAsset.swift in Sources */,
 				0E04FEE325DE8FAE004067C7 /* Weather.swift in Sources */,

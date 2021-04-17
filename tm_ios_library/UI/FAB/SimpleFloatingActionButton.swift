@@ -7,21 +7,44 @@
 
 import UIKit
 
+@IBDesignable
 class SimpleFloatingActionButton: UIView {
-    private let shadowView: UIView = {
-        let view = UIView(frame: .zero)
-        view.backgroundColor = UIColor.init(hex: "ED6317", alpha: 1.0)
-        view.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOpacity = 0.6
-        return view
-    }()
+    
+    private let frontView = UIView(frame: .zero)
     
     private let plusIconView: PlusIconView = {
         let view = PlusIconView(frame: .zero)
         view.backgroundColor = .clear
         return view
     }()
+
+    @IBInspectable
+    public var frontColor: UIColor = UIColor.init(hex: "ED6317", alpha: 1.0) {
+        didSet {
+            frontView.backgroundColor = frontColor
+        }
+    }
+    
+    @IBInspectable
+    public var shadowOffset: CGSize = CGSize(width: 0.0, height: 2.0) {
+        didSet {
+            frontView.layer.shadowOffset = shadowOffset
+        }
+    }
+    
+    @IBInspectable
+    public var shadowColor: UIColor = UIColor.black {
+        didSet {
+            frontView.layer.shadowColor = shadowColor.cgColor
+        }
+    }
+    
+    @IBInspectable
+    public var shadowOpacity: Float = 0.6 {
+        didSet {
+            frontView.layer.shadowOpacity = shadowOpacity
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,11 +58,11 @@ class SimpleFloatingActionButton: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        shadowView.layer.cornerRadius = frame.size.width / 2
-        shadowView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        shadowView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        shadowView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        shadowView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        frontView.layer.cornerRadius = frame.size.width / 2
+        frontView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        frontView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        frontView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        frontView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
         plusIconView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         plusIconView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
@@ -48,9 +71,15 @@ class SimpleFloatingActionButton: UIView {
     }
     
     public func initialize() {
-        addSubview(shadowView)
+        backgroundColor = .clear
+        frontView.backgroundColor = frontColor
+        frontView.layer.shadowOffset = shadowOffset
+        frontView.layer.shadowColor = shadowColor.cgColor
+        frontView.layer.shadowOpacity = shadowOpacity
+        
+        addSubview(frontView)
         addSubview(plusIconView)
-        shadowView.translatesAutoresizingMaskIntoConstraints = false
+        frontView.translatesAutoresizingMaskIntoConstraints = false
         plusIconView.translatesAutoresizingMaskIntoConstraints = false
     }
 }

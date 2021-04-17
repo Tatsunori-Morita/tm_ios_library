@@ -14,6 +14,10 @@ class SampleFABViewController: UIViewController {
         view.backgroundColor = .white
         
         let fab = SimpleFloatingActionButton(frame: .zero)
+        fab.frontColor = .blue
+        fab.shadowOffset = CGSize(width: 2.0, height: 4.0)
+        fab.shadowColor = .red
+        fab.shadowOpacity = 1
         view.addSubview(fab)
         fab.translatesAutoresizingMaskIntoConstraints = false
         fab.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -13).isActive = true

@@ -22,6 +22,9 @@
 		0E23A47626215EE700CEEA01 /* SampleFlexibleHeightImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23A47526215EE700CEEA01 /* SampleFlexibleHeightImageViewController.swift */; };
 		0E23A48126215F2D00CEEA01 /* FlexibleHeightImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23A48026215F2D00CEEA01 /* FlexibleHeightImageView.swift */; };
 		0E23A486262171BD00CEEA01 /* SampleFlexibleHeightImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E23A485262171BD00CEEA01 /* SampleFlexibleHeightImageViewController.storyboard */; };
+		0E256CBF2627388B00847BF6 /* SampleFABViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E256CBE2627388B00847BF6 /* SampleFABViewController.swift */; };
+		0E256CC7262738F300847BF6 /* SimpleFloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E256CC6262738F300847BF6 /* SimpleFloatingActionButton.swift */; };
+		0E256CCD26273A6000847BF6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E256CCC26273A6000847BF6 /* UIColor.swift */; };
 		0E422C0E25EBB4610039D45A /* TestScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E422C0D25EBB4610039D45A /* TestScrollView.swift */; };
 		0E422C1925ECA62D0039D45A /* TestCropViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E422C1825ECA62D0039D45A /* TestCropViewController.storyboard */; };
 		0E422C1E25ECBD200039D45A /* TestCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E422C1D25ECBD200039D45A /* TestCropViewController.swift */; };
@@ -87,6 +90,9 @@
 		0E23A47526215EE700CEEA01 /* SampleFlexibleHeightImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFlexibleHeightImageViewController.swift; sourceTree = "<group>"; };
 		0E23A48026215F2D00CEEA01 /* FlexibleHeightImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleHeightImageView.swift; sourceTree = "<group>"; };
 		0E23A485262171BD00CEEA01 /* SampleFlexibleHeightImageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleFlexibleHeightImageViewController.storyboard; sourceTree = "<group>"; };
+		0E256CBE2627388B00847BF6 /* SampleFABViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFABViewController.swift; sourceTree = "<group>"; };
+		0E256CC6262738F300847BF6 /* SimpleFloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleFloatingActionButton.swift; sourceTree = "<group>"; };
+		0E256CCC26273A6000847BF6 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		0E422C0D25EBB4610039D45A /* TestScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScrollView.swift; sourceTree = "<group>"; };
 		0E422C1825ECA62D0039D45A /* TestCropViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestCropViewController.storyboard; sourceTree = "<group>"; };
 		0E422C1D25ECBD200039D45A /* TestCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCropViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +178,7 @@
 		0E04FEA425DE8F2C004067C7 /* tm_ios_library */ = {
 			isa = PBXGroup;
 			children = (
+				0E256CCB26273A2A00847BF6 /* Extension */,
 				0E23A47426215E9D00CEEA01 /* FlexibleHeightImageView */,
 				0EC0FEF02619B3C80011B8AD /* UI */,
 				0E8A0AF825E13A61007A5523 /* ImagePickerTest */,
@@ -226,6 +233,23 @@
 			path = FlexibleHeightImageView;
 			sourceTree = "<group>";
 		};
+		0E256CBD2627386600847BF6 /* FAB */ = {
+			isa = PBXGroup;
+			children = (
+				0E256CBE2627388B00847BF6 /* SampleFABViewController.swift */,
+				0E256CC6262738F300847BF6 /* SimpleFloatingActionButton.swift */,
+			);
+			path = FAB;
+			sourceTree = "<group>";
+		};
+		0E256CCB26273A2A00847BF6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0E256CCC26273A6000847BF6 /* UIColor.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		0E422C3B25EE6C430039D45A /* Crop */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +302,7 @@
 		0EC0FEF02619B3C80011B8AD /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0E256CBD2627386600847BF6 /* FAB */,
 				0EC0FEF12619B3DC0011B8AD /* TextView */,
 			);
 			path = UI;
@@ -564,6 +589,7 @@
 				0E8A0B1A25E219FA007A5523 /* TestImagesViewController.swift in Sources */,
 				0E23A47626215EE700CEEA01 /* SampleFlexibleHeightImageViewController.swift in Sources */,
 				0E04FEA625DE8F2C004067C7 /* AppDelegate.swift in Sources */,
+				0E256CBF2627388B00847BF6 /* SampleFABViewController.swift in Sources */,
 				0EADC99925E2507A0086F707 /* TestPhotoPickerConfig.swift in Sources */,
 				0E8A0B1525E14613007A5523 /* SecondViewController.swift in Sources */,
 				0EADCA1B25E541E40086F707 /* TestHelper.swift in Sources */,
@@ -575,6 +601,8 @@
 				0EAE6D7925E21FA5002DD870 /* TestPhotoPickerImageCollectionViewLayout.swift in Sources */,
 				0E422C2C25ECDE6D0039D45A /* CropAreaView.swift in Sources */,
 				0EC0FEFB2619DC220011B8AD /* SamplePlaceholderTextViewViewController.swift in Sources */,
+				0E256CC7262738F300847BF6 /* SimpleFloatingActionButton.swift in Sources */,
+				0E256CCD26273A6000847BF6 /* UIColor.swift in Sources */,
 				0E04FEA825DE8F2C004067C7 /* SceneDelegate.swift in Sources */,
 				0E422C3725EE6BB50039D45A /* ImagePickerViewController.swift in Sources */,
 				0EAE6D7E25E221A4002DD870 /* TestPhotoPickerImageCollectionViewCell.swift in Sources */,

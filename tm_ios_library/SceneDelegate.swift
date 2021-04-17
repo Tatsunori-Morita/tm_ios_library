@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
 //        window?.rootViewController = UIHostingController(rootView: WeatherView(viewModel: WeatherVewModel(weatherService: WeatherService())))
-        window?.rootViewController = UINavigationController(rootViewController: SampleFlexibleHeightImageViewController.createInstance())
+        window?.rootViewController = UINavigationController(rootViewController: SampleFABViewController())
 //        window?.rootViewController = UINavigationController(rootViewController: SampleFlexibleHeightImageViewController())
         window?.makeKeyAndVisible()
     }

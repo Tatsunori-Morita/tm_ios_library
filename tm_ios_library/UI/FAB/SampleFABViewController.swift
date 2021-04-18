@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SampleFABViewController: UIViewController {
+class SampleFABViewController: UIViewController, SimpleFloatingActionButtonDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,11 +18,16 @@ class SampleFABViewController: UIViewController {
         fab.shadowOffset = CGSize(width: 2.0, height: 4.0)
         fab.shadowColor = .red
         fab.shadowOpacity = 1
+        fab.delegate = self
         view.addSubview(fab)
         fab.translatesAutoresizingMaskIntoConstraints = false
         fab.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -13).isActive = true
         fab.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
         fab.widthAnchor.constraint(equalToConstant: 44).isActive = true
         fab.heightAnchor.constraint(equalToConstant: 44).isActive  = true
+    }
+    
+    func onTapped() {
+        print("tapped!!")
     }
 }

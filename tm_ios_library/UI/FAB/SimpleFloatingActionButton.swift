@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol SimpleFloatingActionButtonDelegate {
+    func onTapped()
+}
+
 @IBDesignable
 class SimpleFloatingActionButton: UIView {
     
@@ -15,8 +19,11 @@ class SimpleFloatingActionButton: UIView {
     private let plusIconView: PlusIconView = {
         let view = PlusIconView(frame: .zero)
         view.backgroundColor = .clear
+        view.isUserInteractionEnabled = false
         return view
     }()
+    
+    public var delegate: SimpleFloatingActionButtonDelegate?
 
     @IBInspectable
     public var frontColor: UIColor = UIColor.init(hex: "ED6317", alpha: 1.0) {
@@ -81,6 +88,13 @@ class SimpleFloatingActionButton: UIView {
         addSubview(plusIconView)
         frontView.translatesAutoresizingMaskIntoConstraints = false
         plusIconView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(onTapped))
+        frontView.addGestureRecognizer(gesture)
+    }
+    
+    @objc func onTapped() {
+        delegate?.onTapped()
     }
 }
 

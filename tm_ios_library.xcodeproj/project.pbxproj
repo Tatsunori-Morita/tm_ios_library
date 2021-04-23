@@ -25,6 +25,12 @@
 		0E256CBF2627388B00847BF6 /* SampleFABViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E256CBE2627388B00847BF6 /* SampleFABViewController.swift */; };
 		0E256CC7262738F300847BF6 /* SimpleFloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E256CC6262738F300847BF6 /* SimpleFloatingActionButton.swift */; };
 		0E256CCD26273A6000847BF6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E256CCC26273A6000847BF6 /* UIColor.swift */; };
+		0E2758FF262BFFD0000DF85F /* SampleSUSimpleFloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2758FE262BFFD0000DF85F /* SampleSUSimpleFloatingActionButton.swift */; };
+		0E275900262BFFD0000DF85F /* SampleSUSimpleFloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2758FE262BFFD0000DF85F /* SampleSUSimpleFloatingActionButton.swift */; };
+		0E275901262BFFD0000DF85F /* SampleSUSimpleFloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2758FE262BFFD0000DF85F /* SampleSUSimpleFloatingActionButton.swift */; };
+		0E275906262C0890000DF85F /* SUColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E275905262C0890000DF85F /* SUColor.swift */; };
+		0E275907262C0890000DF85F /* SUColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E275905262C0890000DF85F /* SUColor.swift */; };
+		0E275908262C0890000DF85F /* SUColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E275905262C0890000DF85F /* SUColor.swift */; };
 		0E422C0E25EBB4610039D45A /* TestScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E422C0D25EBB4610039D45A /* TestScrollView.swift */; };
 		0E422C1925ECA62D0039D45A /* TestCropViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E422C1825ECA62D0039D45A /* TestCropViewController.storyboard */; };
 		0E422C1E25ECBD200039D45A /* TestCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E422C1D25ECBD200039D45A /* TestCropViewController.swift */; };
@@ -93,6 +99,8 @@
 		0E256CBE2627388B00847BF6 /* SampleFABViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFABViewController.swift; sourceTree = "<group>"; };
 		0E256CC6262738F300847BF6 /* SimpleFloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleFloatingActionButton.swift; sourceTree = "<group>"; };
 		0E256CCC26273A6000847BF6 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		0E2758FE262BFFD0000DF85F /* SampleSUSimpleFloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSUSimpleFloatingActionButton.swift; sourceTree = "<group>"; };
+		0E275905262C0890000DF85F /* SUColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUColor.swift; sourceTree = "<group>"; };
 		0E422C0D25EBB4610039D45A /* TestScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScrollView.swift; sourceTree = "<group>"; };
 		0E422C1825ECA62D0039D45A /* TestCropViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestCropViewController.storyboard; sourceTree = "<group>"; };
 		0E422C1D25ECBD200039D45A /* TestCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCropViewController.swift; sourceTree = "<group>"; };
@@ -238,6 +246,7 @@
 			children = (
 				0E256CBE2627388B00847BF6 /* SampleFABViewController.swift */,
 				0E256CC6262738F300847BF6 /* SimpleFloatingActionButton.swift */,
+				0E2758FE262BFFD0000DF85F /* SampleSUSimpleFloatingActionButton.swift */,
 			);
 			path = FAB;
 			sourceTree = "<group>";
@@ -245,9 +254,26 @@
 		0E256CCB26273A2A00847BF6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				0E256CCC26273A6000847BF6 /* UIColor.swift */,
+				0E27590F262C09AA000DF85F /* SwiftUI */,
+				0E27590E262C0994000DF85F /* UIKit */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		0E27590E262C0994000DF85F /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				0E256CCC26273A6000847BF6 /* UIColor.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		0E27590F262C09AA000DF85F /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				0E275905262C0890000DF85F /* SUColor.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		0E422C3B25EE6C430039D45A /* Crop */ = {
@@ -598,11 +624,13 @@
 				0EE554E925EFC24B00644631 /* ImagePickerCollectionViewCell.swift in Sources */,
 				0E04FEE825DE8FBB004067C7 /* Const.swift in Sources */,
 				0E422C0E25EBB4610039D45A /* TestScrollView.swift in Sources */,
+				0E275906262C0890000DF85F /* SUColor.swift in Sources */,
 				0EAE6D7925E21FA5002DD870 /* TestPhotoPickerImageCollectionViewLayout.swift in Sources */,
 				0E422C2C25ECDE6D0039D45A /* CropAreaView.swift in Sources */,
 				0EC0FEFB2619DC220011B8AD /* SamplePlaceholderTextViewViewController.swift in Sources */,
 				0E256CC7262738F300847BF6 /* SimpleFloatingActionButton.swift in Sources */,
 				0E256CCD26273A6000847BF6 /* UIColor.swift in Sources */,
+				0E2758FF262BFFD0000DF85F /* SampleSUSimpleFloatingActionButton.swift in Sources */,
 				0E04FEA825DE8F2C004067C7 /* SceneDelegate.swift in Sources */,
 				0E422C3725EE6BB50039D45A /* ImagePickerViewController.swift in Sources */,
 				0EAE6D7E25E221A4002DD870 /* TestPhotoPickerImageCollectionViewCell.swift in Sources */,
@@ -621,6 +649,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E04FEBD25DE8F2E004067C7 /* tm_ios_libraryTests.swift in Sources */,
+				0E275907262C0890000DF85F /* SUColor.swift in Sources */,
+				0E275900262BFFD0000DF85F /* SampleSUSimpleFloatingActionButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,6 +659,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E04FEC825DE8F2E004067C7 /* tm_ios_libraryUITests.swift in Sources */,
+				0E275908262C0890000DF85F /* SUColor.swift in Sources */,
+				0E275901262BFFD0000DF85F /* SampleSUSimpleFloatingActionButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

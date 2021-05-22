@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SampleFABViewController: UIViewController, SimpleFloatingActionButtonDelegate {
+class SampleFABViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,19 +15,29 @@ class SampleFABViewController: UIViewController, SimpleFloatingActionButtonDeleg
         
         let fab = SimpleFloatingActionButton(frame: .zero)
         fab.frontColor = .blue
-        fab.shadowOffset = CGSize(width: 2.0, height: 4.0)
-        fab.shadowColor = .red
-        fab.shadowOpacity = 1
+        fab.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        fab.shadowColor = .black
+        fab.shadowOpacity = 0.6
         fab.delegate = self
         view.addSubview(fab)
         fab.translatesAutoresizingMaskIntoConstraints = false
-        fab.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -13).isActive = true
-        fab.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
-        fab.widthAnchor.constraint(equalToConstant: 44).isActive = true
-        fab.heightAnchor.constraint(equalToConstant: 44).isActive  = true
+        fab.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        fab.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        fab.widthAnchor.constraint(equalToConstant: 63).isActive = true
+        fab.heightAnchor.constraint(equalToConstant: 63).isActive  = true
+    }
+}
+
+extension SampleFABViewController: SimpleFloatingActionButtonDelegate {
+    func didClose() {
+        print("didClose")
     }
     
     func onTapped() {
-        print("tapped!!")
+        print("onTapped")
+    }
+    
+    func didOpen() {
+        print("didOpen")
     }
 }

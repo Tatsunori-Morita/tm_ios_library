@@ -9,12 +9,15 @@ import UIKit
 
 protocol SimpleFloatingActionButtonDelegate {
     func onTapped()
+    func didOpen()
+    func didClose()
 }
 
 @IBDesignable
 class SimpleFloatingActionButton: UIView {
     
     private let frontView = UIView(frame: .zero)
+    private let overlayView = UIView(frame: .zero)
     
     private let plusIconView: PlusIconView = {
         let view = PlusIconView(frame: .zero)
@@ -22,6 +25,10 @@ class SimpleFloatingActionButton: UIView {
         view.isUserInteractionEnabled = false
         return view
     }()
+    
+    private var closed: Bool = true
+    
+    private var overlayViewDidCompleteOpenAnimation: Bool = true
     
     public var delegate: SimpleFloatingActionButtonDelegate?
 
@@ -52,6 +59,9 @@ class SimpleFloatingActionButton: UIView {
             frontView.layer.shadowOpacity = shadowOpacity
         }
     }
+    
+    @IBInspectable
+    public var overlayColor: UIColor = UIColor.black.withAlphaComponent(0.3)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -93,8 +103,81 @@ class SimpleFloatingActionButton: UIView {
         frontView.addGestureRecognizer(gesture)
     }
     
-    @objc func onTapped() {
+    @objc private func onTapped() {
         delegate?.onTapped()
+        toggle()
+    }
+    
+    private func toggle() {
+        if closed {
+            open()
+        } else {
+            close()
+        }
+    }
+    
+    private func open() {
+        let animationGrooup = DispatchGroup()
+        
+        setOverlayView()
+        self.superview?.insertSubview(overlayView, aboveSubview: self)
+        self.superview?.bringSubviewToFront(self)
+        
+        overlayViewDidCompleteOpenAnimation = false
+        animationGrooup.enter()
+        UIView.animate(withDuration: 0.3, delay: 0,
+                       usingSpringWithDamping: 0.55,
+                       initialSpringVelocity: 0.3,
+                       options: UIView.AnimationOptions(), animations: { () -> Void in
+                        self.transform = CGAffineTransform(rotationAngle: (-45 / 180.0 * CGFloat.pi))
+                        self.overlayView.alpha = 1
+        }, completion: {(f) -> Void in
+            self.overlayViewDidCompleteOpenAnimation = true
+            animationGrooup.leave()
+        })
+        
+        animationGrooup.notify(queue: .main) {
+            self.delegate?.didOpen()
+        }
+        
+        closed = false
+    }
+    
+    private func close() {
+        let animationGrooup = DispatchGroup()
+        
+        animationGrooup.enter()
+        UIView.animate(withDuration: 0.3, delay: 0,
+                       usingSpringWithDamping: 0.6,
+                       initialSpringVelocity: 0.8,
+                       options: UIView.AnimationOptions(), animations: { () -> Void in
+                        self.transform = CGAffineTransform(rotationAngle: (0 / 180.0 * CGFloat.pi))
+                        self.overlayView.alpha = 0
+        }, completion: {(f) -> Void in
+            if self.overlayViewDidCompleteOpenAnimation {
+                self.overlayView.removeFromSuperview()
+            }
+            animationGrooup.leave()
+        })
+        
+        animationGrooup.notify(queue: .main) {
+            self.delegate?.didClose()
+        }
+        
+        closed = true
+    }
+    
+    private func setOverlayView() {
+        if let superview = superview {
+            overlayView.frame = CGRect(
+                x: 0, y: 0,
+                width: superview.bounds.width,
+                height: superview.bounds.height
+            )
+        }
+        overlayView.backgroundColor = overlayColor
+        overlayView.alpha = 0
+        overlayView.isUserInteractionEnabled = true
     }
 }
 

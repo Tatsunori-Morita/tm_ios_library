@@ -13,7 +13,7 @@ class SampleFABViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        let fab = SimpleFloatingActionButton(frame: .zero)
+        let fab = SimpleFloatingActionButton()
         fab.frontColor = .blue
         fab.shadowOffset = CGSize(width: 0.0, height: 2.0)
         fab.shadowColor = .black
@@ -25,6 +25,20 @@ class SampleFABViewController: UIViewController {
         fab.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
         fab.widthAnchor.constraint(equalToConstant: 63).isActive = true
         fab.heightAnchor.constraint(equalToConstant: 63).isActive  = true
+        
+        let item1 = SimpleFloatingActionButtonItem()
+        item1.backgroundColor = .green
+        fab.addImte(item: item1)
+        item1.tapped = { item in
+            print("item1 tapped")
+        }
+        
+        let item2 = SimpleFloatingActionButtonItem()
+        item2.backgroundColor = .yellow
+        fab.addImte(item: item2)
+        item2.tapped = { item in
+            print("item2 tapped")
+        }
     }
 }
 
@@ -33,8 +47,8 @@ extension SampleFABViewController: SimpleFloatingActionButtonDelegate {
         print("didClose")
     }
     
-    func onTapped() {
-        print("onTapped")
+    func didTappe() {
+        print("didTappe")
     }
     
     func didOpen() {

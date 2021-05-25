@@ -7,12 +7,6 @@
 
 import UIKit
 
-protocol SimpleFloatingActionButtonDelegate {
-    func onTapped()
-    func didOpen()
-    func didClose()
-}
-
 @IBDesignable
 class SimpleFloatingActionButton: UIView {
     
@@ -26,11 +20,15 @@ class SimpleFloatingActionButton: UIView {
         return view
     }()
     
+    public var delegate: SimpleFloatingActionButtonDelegate?
+    
     private var closed: Bool = true
     
     private var overlayViewDidCompleteOpenAnimation: Bool = true
     
-    public var delegate: SimpleFloatingActionButtonDelegate?
+    private var size: CGFloat = 63
+    
+    private var items: [SimpleFloatingActionButtonItem] = []
 
     @IBInspectable
     public var frontColor: UIColor = UIColor.init(hex: "ED6317", alpha: 1.0) {
@@ -62,20 +60,35 @@ class SimpleFloatingActionButton: UIView {
     
     @IBInspectable
     public var overlayColor: UIColor = UIColor.black.withAlphaComponent(0.3)
+    
+    // MARK: - Initialize
+    
+    public init() {
+        super.init(frame: CGRect(x: 0, y: 0, width: size, height: size))
+        initialize()
+    }
+
+    public init(size: CGFloat) {
+        self.size = size
+        super.init(frame: CGRect(x: 0, y: 0, width: size, height: size))
+        initialize()
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        size = min(frame.size.width, frame.size.height)
         initialize()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        size = min(frame.size.width, frame.size.height)
         initialize()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        frontView.layer.cornerRadius = frame.size.width / 2
+        frontView.layer.cornerRadius = size / 2
         frontView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         frontView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         frontView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
@@ -86,6 +99,20 @@ class SimpleFloatingActionButton: UIView {
         plusIconView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         plusIconView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        if !closed {
+            for item in items {
+                let itemPoint = item.convert(point, from: self)
+                if item.bounds.contains(itemPoint) {
+                    return item.hitTest(itemPoint, with: event)
+                }
+            }
+        }
+        return super.hitTest(point, with: event)
+    }
+    
+    // MARK: - Method
     
     public func initialize() {
         backgroundColor = .clear
@@ -99,12 +126,17 @@ class SimpleFloatingActionButton: UIView {
         frontView.translatesAutoresizingMaskIntoConstraints = false
         plusIconView.translatesAutoresizingMaskIntoConstraints = false
         
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(onTapped))
-        frontView.addGestureRecognizer(gesture)
+        frontView.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(didTappe))
+        )
+        
+        overlayView.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(close))
+        )
     }
     
-    @objc private func onTapped() {
-        delegate?.onTapped()
+    @objc private func didTappe() {
+        delegate?.didTappe()
         toggle()
     }
     
@@ -129,12 +161,14 @@ class SimpleFloatingActionButton: UIView {
                        usingSpringWithDamping: 0.55,
                        initialSpringVelocity: 0.3,
                        options: UIView.AnimationOptions(), animations: { () -> Void in
-                        self.transform = CGAffineTransform(rotationAngle: (-45 / 180.0 * CGFloat.pi))
+                        self.plusIconView.transform = CGAffineTransform(rotationAngle: (-45 / 180.0 * CGFloat.pi))
                         self.overlayView.alpha = 1
         }, completion: {(f) -> Void in
             self.overlayViewDidCompleteOpenAnimation = true
             animationGrooup.leave()
         })
+        
+        popAnimationOpen(group: animationGrooup)
         
         animationGrooup.notify(queue: .main) {
             self.delegate?.didOpen()
@@ -143,7 +177,7 @@ class SimpleFloatingActionButton: UIView {
         closed = false
     }
     
-    private func close() {
+    @objc public func close() {
         let animationGrooup = DispatchGroup()
         
         animationGrooup.enter()
@@ -151,7 +185,7 @@ class SimpleFloatingActionButton: UIView {
                        usingSpringWithDamping: 0.6,
                        initialSpringVelocity: 0.8,
                        options: UIView.AnimationOptions(), animations: { () -> Void in
-                        self.transform = CGAffineTransform(rotationAngle: (0 / 180.0 * CGFloat.pi))
+                        self.plusIconView.transform = CGAffineTransform(rotationAngle: (0 / 180.0 * CGFloat.pi))
                         self.overlayView.alpha = 0
         }, completion: {(f) -> Void in
             if self.overlayViewDidCompleteOpenAnimation {
@@ -159,6 +193,8 @@ class SimpleFloatingActionButton: UIView {
             }
             animationGrooup.leave()
         })
+        
+        popAnimationClose(group: animationGrooup)
         
         animationGrooup.notify(queue: .main) {
             self.delegate?.didClose()
@@ -178,6 +214,52 @@ class SimpleFloatingActionButton: UIView {
         overlayView.backgroundColor = overlayColor
         overlayView.alpha = 0
         overlayView.isUserInteractionEnabled = true
+    }
+    
+    public func addImte(item: SimpleFloatingActionButtonItem) {
+        item.center.x = self.size / 2
+        item.center.y = self.size / 2
+        item.alpha = 0
+        item.parent = self
+        items.append(item)
+        addSubview(item)
+        sendSubviewToBack(item)
+    }
+    
+    private func popAnimationOpen(group: DispatchGroup) {
+        var itemHight: CGFloat = 0
+        var delay = 0.0
+        for item in items {
+            itemHight += item.size + 20
+            item.frame.origin.y = -itemHight
+            item.isUserInteractionEnabled = true
+            group.enter()
+            UIView.animate(withDuration: 0.3, delay: delay,
+                           usingSpringWithDamping: 0.55,
+                           initialSpringVelocity: 0.3,
+                           options: UIView.AnimationOptions(), animations: { () -> Void in
+                            item.alpha = 1
+            }, completion: { _ in
+                group.leave()
+            })
+            delay += 0.1
+        }
+    }
+    
+    private func popAnimationClose(group: DispatchGroup) {
+        var delay = 0.0
+        for item in items.reversed() {
+            item.isUserInteractionEnabled = false
+            group.enter()
+            UIView.animate(withDuration: 0.15, delay: delay, options: [], animations: { () -> Void in
+                item.center.x = self.size / 2
+                item.center.y = self.size / 2
+                item.alpha = 0
+            }, completion: { _ in
+                group.leave()
+            })
+            delay += 0.1
+        }
     }
 }
 

@@ -49,6 +49,8 @@
 		0EC0FEF32619B3FB0011B8AD /* PlaceholderTextview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC0FEF22619B3FB0011B8AD /* PlaceholderTextview.swift */; };
 		0EC0FEFB2619DC220011B8AD /* SamplePlaceholderTextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC0FEFA2619DC220011B8AD /* SamplePlaceholderTextViewViewController.swift */; };
 		0EC0FF002619DC7C0011B8AD /* SamplePlaceholderTextViewViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EC0FEFF2619DC7C0011B8AD /* SamplePlaceholderTextViewViewController.storyboard */; };
+		0ECD13F1265B6FB80011E2D9 /* SimpleFloatingActionButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECD13F0265B6FB80011E2D9 /* SimpleFloatingActionButtonDelegate.swift */; };
+		0ECD13F3265B71FC0011E2D9 /* SimpleFloatingActionButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECD13F2265B71FC0011E2D9 /* SimpleFloatingActionButtonItem.swift */; };
 		0EE554E925EFC24B00644631 /* ImagePickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE554E825EFC24B00644631 /* ImagePickerCollectionViewCell.swift */; };
 		0EE554EE25F10DF000644631 /* ImagePickerPhotoAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE554ED25F10DF000644631 /* ImagePickerPhotoAsset.swift */; };
 		57D6D7558F577FAC6C1DF856 /* Pods_tm_ios_libraryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2D9E22BBC35A661EFB7532 /* Pods_tm_ios_libraryTests.framework */; };
@@ -118,6 +120,8 @@
 		0EC0FEF22619B3FB0011B8AD /* PlaceholderTextview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextview.swift; sourceTree = "<group>"; };
 		0EC0FEFA2619DC220011B8AD /* SamplePlaceholderTextViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplePlaceholderTextViewViewController.swift; sourceTree = "<group>"; };
 		0EC0FEFF2619DC7C0011B8AD /* SamplePlaceholderTextViewViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SamplePlaceholderTextViewViewController.storyboard; sourceTree = "<group>"; };
+		0ECD13F0265B6FB80011E2D9 /* SimpleFloatingActionButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleFloatingActionButtonDelegate.swift; sourceTree = "<group>"; };
+		0ECD13F2265B71FC0011E2D9 /* SimpleFloatingActionButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleFloatingActionButtonItem.swift; sourceTree = "<group>"; };
 		0EE554E825EFC24B00644631 /* ImagePickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		0EE554ED25F10DF000644631 /* ImagePickerPhotoAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerPhotoAsset.swift; sourceTree = "<group>"; };
 		12E79107BB12DC27BE36C125 /* Pods_tm_ios_library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tm_ios_library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,8 +244,8 @@
 		0E256CBD2627386600847BF6 /* FAB */ = {
 			isa = PBXGroup;
 			children = (
+				0ECD13EF265B6F920011E2D9 /* SimpleFloatingActionButton */,
 				0E256CBE2627388B00847BF6 /* SampleFABViewController.swift */,
-				0E256CC6262738F300847BF6 /* SimpleFloatingActionButton.swift */,
 				0E2758FE262BFFD0000DF85F /* SampleSUSimpleFloatingActionButton.swift */,
 			);
 			path = FAB;
@@ -363,6 +367,16 @@
 				0EC0FEFF2619DC7C0011B8AD /* SamplePlaceholderTextViewViewController.storyboard */,
 			);
 			path = TextView;
+			sourceTree = "<group>";
+		};
+		0ECD13EF265B6F920011E2D9 /* SimpleFloatingActionButton */ = {
+			isa = PBXGroup;
+			children = (
+				0ECD13F0265B6FB80011E2D9 /* SimpleFloatingActionButtonDelegate.swift */,
+				0E256CC6262738F300847BF6 /* SimpleFloatingActionButton.swift */,
+				0ECD13F2265B71FC0011E2D9 /* SimpleFloatingActionButtonItem.swift */,
+			);
+			path = SimpleFloatingActionButton;
 			sourceTree = "<group>";
 		};
 		1AE885819A4EA9609A146F59 /* Pods */ = {
@@ -639,6 +653,7 @@
 				0EADC99925E2507A0086F707 /* TestPhotoPickerConfig.swift in Sources */,
 				0E8A0B1525E14613007A5523 /* SecondViewController.swift in Sources */,
 				0EADCA1B25E541E40086F707 /* TestHelper.swift in Sources */,
+				0ECD13F1265B6FB80011E2D9 /* SimpleFloatingActionButtonDelegate.swift in Sources */,
 				0E422C2625ECC5EC0039D45A /* ImageCropHndler.swift in Sources */,
 				0E04FEE225DE8FAE004067C7 /* WeatherService.swift in Sources */,
 				0EE554E925EFC24B00644631 /* ImagePickerCollectionViewCell.swift in Sources */,
@@ -646,6 +661,7 @@
 				0E422C0E25EBB4610039D45A /* TestScrollView.swift in Sources */,
 				0E275906262C0890000DF85F /* SUColor.swift in Sources */,
 				0EAE6D7925E21FA5002DD870 /* TestPhotoPickerImageCollectionViewLayout.swift in Sources */,
+				0ECD13F3265B71FC0011E2D9 /* SimpleFloatingActionButtonItem.swift in Sources */,
 				0E422C2C25ECDE6D0039D45A /* CropAreaView.swift in Sources */,
 				0EC0FEFB2619DC220011B8AD /* SamplePlaceholderTextViewViewController.swift in Sources */,
 				0E256CC7262738F300847BF6 /* SimpleFloatingActionButton.swift in Sources */,

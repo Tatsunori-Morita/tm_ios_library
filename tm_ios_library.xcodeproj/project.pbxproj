@@ -30,6 +30,12 @@
 		0E275906262C0890000DF85F /* SUColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E275905262C0890000DF85F /* SUColor.swift */; };
 		0E275907262C0890000DF85F /* SUColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E275905262C0890000DF85F /* SUColor.swift */; };
 		0E275908262C0890000DF85F /* SUColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E275905262C0890000DF85F /* SUColor.swift */; };
+		0E4091082660ABD800082260 /* SampleCustomCodableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4091072660ABD800082260 /* SampleCustomCodableViewController.swift */; };
+		0E4091092660ABD800082260 /* SampleCustomCodableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4091072660ABD800082260 /* SampleCustomCodableViewController.swift */; };
+		0E40910A2660ABD800082260 /* SampleCustomCodableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4091072660ABD800082260 /* SampleCustomCodableViewController.swift */; };
+		0E4091132660AD7600082260 /* Calendar.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E4091122660AD7600082260 /* Calendar.json */; };
+		0E4091142660AD7600082260 /* Calendar.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E4091122660AD7600082260 /* Calendar.json */; };
+		0E4091152660AD7600082260 /* Calendar.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E4091122660AD7600082260 /* Calendar.json */; };
 		0E422C0E25EBB4610039D45A /* TestScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E422C0D25EBB4610039D45A /* TestScrollView.swift */; };
 		0E422C1925ECA62D0039D45A /* TestCropViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E422C1825ECA62D0039D45A /* TestCropViewController.storyboard */; };
 		0E422C1E25ECBD200039D45A /* TestCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E422C1D25ECBD200039D45A /* TestCropViewController.swift */; };
@@ -101,6 +107,8 @@
 		0E256CCC26273A6000847BF6 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		0E2758FE262BFFD0000DF85F /* SampleSUSimpleFloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSUSimpleFloatingActionButton.swift; sourceTree = "<group>"; };
 		0E275905262C0890000DF85F /* SUColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUColor.swift; sourceTree = "<group>"; };
+		0E4091072660ABD800082260 /* SampleCustomCodableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCustomCodableViewController.swift; sourceTree = "<group>"; };
+		0E4091122660AD7600082260 /* Calendar.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Calendar.json; sourceTree = "<group>"; };
 		0E422C0D25EBB4610039D45A /* TestScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScrollView.swift; sourceTree = "<group>"; };
 		0E422C1825ECA62D0039D45A /* TestCropViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestCropViewController.storyboard; sourceTree = "<group>"; };
 		0E422C1D25ECBD200039D45A /* TestCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCropViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +196,8 @@
 		0E04FEA425DE8F2C004067C7 /* tm_ios_library */ = {
 			isa = PBXGroup;
 			children = (
+				0E40910C2660ACC900082260 /* Resouces */,
+				0E40910B2660ABE900082260 /* Codable */,
 				0E97B05A262AA2A0008E5939 /* App */,
 				0EC0FEF02619B3C80011B8AD /* UI */,
 				0E256CCB26273A2A00847BF6 /* Extension */,
@@ -274,6 +284,30 @@
 				0E275905262C0890000DF85F /* SUColor.swift */,
 			);
 			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		0E40910B2660ABE900082260 /* Codable */ = {
+			isa = PBXGroup;
+			children = (
+				0E4091072660ABD800082260 /* SampleCustomCodableViewController.swift */,
+			);
+			path = Codable;
+			sourceTree = "<group>";
+		};
+		0E40910C2660ACC900082260 /* Resouces */ = {
+			isa = PBXGroup;
+			children = (
+				0E40910D2660ACEB00082260 /* Json */,
+			);
+			path = Resouces;
+			sourceTree = "<group>";
+		};
+		0E40910D2660ACEB00082260 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				0E4091122660AD7600082260 /* Calendar.json */,
+			);
+			path = Json;
 			sourceTree = "<group>";
 		};
 		0E422C3B25EE6C430039D45A /* Crop */ = {
@@ -514,6 +548,7 @@
 				0EC0FF002619DC7C0011B8AD /* SamplePlaceholderTextViewViewController.storyboard in Resources */,
 				0E04FEAF25DE8F2D004067C7 /* Assets.xcassets in Resources */,
 				0E422C1925ECA62D0039D45A /* TestCropViewController.storyboard in Resources */,
+				0E4091132660AD7600082260 /* Calendar.json in Resources */,
 				0E23A486262171BD00CEEA01 /* SampleFlexibleHeightImageViewController.storyboard in Resources */,
 				0E8A0B1F25E21A20007A5523 /* TestImagesViewController.storyboard in Resources */,
 			);
@@ -523,6 +558,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E4091142660AD7600082260 /* Calendar.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +566,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E4091152660AD7600082260 /* Calendar.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +690,7 @@
 				0EADC99925E2507A0086F707 /* TestPhotoPickerConfig.swift in Sources */,
 				0E8A0B1525E14613007A5523 /* SecondViewController.swift in Sources */,
 				0EADCA1B25E541E40086F707 /* TestHelper.swift in Sources */,
+				0E4091082660ABD800082260 /* SampleCustomCodableViewController.swift in Sources */,
 				0ECD13F1265B6FB80011E2D9 /* SimpleFloatingActionButtonDelegate.swift in Sources */,
 				0E422C2625ECC5EC0039D45A /* ImageCropHndler.swift in Sources */,
 				0E04FEE225DE8FAE004067C7 /* WeatherService.swift in Sources */,
@@ -684,6 +722,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E4091092660ABD800082260 /* SampleCustomCodableViewController.swift in Sources */,
 				0E04FEBD25DE8F2E004067C7 /* tm_ios_libraryTests.swift in Sources */,
 				0E275907262C0890000DF85F /* SUColor.swift in Sources */,
 				0E275900262BFFD0000DF85F /* SampleSUSimpleFloatingActionButton.swift in Sources */,
@@ -694,6 +733,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E40910A2660ABD800082260 /* SampleCustomCodableViewController.swift in Sources */,
 				0E04FEC825DE8F2E004067C7 /* tm_ios_libraryUITests.swift in Sources */,
 				0E275908262C0890000DF85F /* SUColor.swift in Sources */,
 				0E275901262BFFD0000DF85F /* SampleSUSimpleFloatingActionButton.swift in Sources */,

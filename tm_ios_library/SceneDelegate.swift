@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        window?.rootViewController = UIHostingController(rootView: SampleSUSimpleFloatingActionButton()) //UINavigationController(rootViewController: SampleFABViewController())
 //        window?.rootViewController = UINavigationController(rootViewController: SampleFlexibleHeightImageViewController())
         
-        window?.rootViewController = UINavigationController(rootViewController: SampleFABViewController())
+        window?.rootViewController = UINavigationController(rootViewController: SampleCustomCodableViewController())
         window?.makeKeyAndVisible()
     }
 
